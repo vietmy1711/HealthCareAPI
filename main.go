@@ -2,26 +2,24 @@ package main
 
 import (
 	"github.com/heroku/go-getting-started/db"
-	"github.com/heroku/go-getting-started/handler"
 	"github.com/labstack/echo/v4"
+	"os"
 )
 
 
 func main() {
+	port := os.Getenv("PORT")
 
-	sql := &db.Sql{
-		Host: "localhost",
-		Port: 5432,
-		Username: "postgres",
-		Password: "phucleuit",
-		Dbname: "health_api",
-
+	if port == "" {
+		//log.Fatal("$PORT must be set")
+		port = "7000"
 	}
-	sql.Connect()
-	defer sql.Closed()
+	DB := &db.Sql{}
+	DB.Connect()
+	defer DB.Close()
+
 	e := echo.New()
-	e.GET("/user/sign-in", handler.HandleSignIn)
-	e.Logger.Fatal(e.Start(":3000"))
+	e.Logger.Fatal(e.Start(":" + port))
 }
 
 

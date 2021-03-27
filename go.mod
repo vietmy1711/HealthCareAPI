@@ -11,5 +11,6 @@ require (
 	github.com/labstack/gommon v0.3.0
 	github.com/lib/pq v1.10.0
 	github.com/manucorporat/sse v0.0.0-20150604091100-c142f0f1baea // indirect
+	github.com/rubenv/sql-migrate v0.0.0-20210215143335-f84234893558 // indirect
 	gopkg.in/bluesuncorp/validator.v5 v5.9.1 // indirect
 )
