@@ -1,23 +1,28 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
-	"os"
+	"github.com/heroku/go-getting-started/db"
+	"github.com/heroku/go-getting-started/handler"
+	"github.com/labstack/echo/v4"
 )
 
-func homePage(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Phục non!")
-	fmt.Println("Endpoint Hit: homePage")
-}
-
-func handleRequests() {
-	port := os.Getenv("PORT")
-	http.HandleFunc("/", homePage)
-	log.Fatal(http.ListenAndServe(":"+port, nil))
-}
 
 func main() {
-	handleRequests()
+
+	sql := &db.Sql{
+		Host: "localhost",
+		Port: 5432,
+		Username: "postgres",
+		Password: "phucleuit",
+		Dbname: "health_api",
+
+	}
+	sql.Connect()
+	defer sql.Closed()
+	e := echo.New()
+	e.GET("/user/sign-in", handler.HandleSignIn)
+	e.Logger.Fatal(e.Start(":3000"))
 }
+
+
+
