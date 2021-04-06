@@ -19,7 +19,7 @@ func (s *Sql) Connect() {
 		log.Error(err.Error())
 		return
 	}
-
+// my ngu
 	fmt.Println("Connected to database....")
 }
 
