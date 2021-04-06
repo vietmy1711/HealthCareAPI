@@ -5,7 +5,6 @@ import (
 	"github.com/jmoiron/sqlx"
 	"github.com/labstack/gommon/log"
 	_ "github.com/lib/pq"
-	"os"
 )
 
 type Sql struct {
@@ -13,7 +12,7 @@ type Sql struct {
 }
 
 func (s *Sql) Connect() {
-	s.DB = sqlx.MustConnect("postgres", os.Getenv("DB_URI"))
+	s.DB = sqlx.MustConnect("postgres", "host=ec2-52-71-161-140.compute-1.amazonaws.com port=5432 user=gypzkqyxameflw password=fa0bd299af4a929d7e232ea777cde4def55217b7f0e65ec698966c5b35052c72 dbname=d5e9m1htvn9vqg sslmode=require")
 
 	if err := s.DB.Ping(); err != nil {
 		log.Error(err.Error())
