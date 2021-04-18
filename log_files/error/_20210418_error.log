@@ -1,0 +1,14 @@
+time="2021-04-18T12:31:27.387226+07:00" level=error msg="could not find name userid in model.User{UserId:\"\", FullName:\"\", Blood:0, Gender:0}" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-04-18T12:34:25.849401+07:00" level=error msg="pq: column \"user_id\" of relation \"user\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-04-18T12:34:45.672841+07:00" level=error msg="pq: syntax error at or near \"user\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-04-18T12:40:44.80206+07:00" level=error msg="pq: syntax error at or near \"user\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-04-18T12:46:12.04323+07:00" level=error msg="pq: syntax error at or near \"user\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-04-18T12:46:42.957697+07:00" level=error msg="pq: column \"user_id\" of relation \"user\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-04-18T12:49:35.11764+07:00" level=error msg="pq: duplicate key value violates unique constraint \"user_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-04-18T12:53:06.337434+07:00" level=error msg="pq: column \"userid\" of relation \"user\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-04-18T13:12:32.302328+07:00" level=error msg="pq: duplicate key value violates unique constraint \"user_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-04-18T13:13:29.252969+07:00" level=error msg="pq: duplicate key value violates unique constraint \"user_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-04-18T13:17:27.200827+07:00" level=error msg="code=415, message=Unsupported Media Type" file=/Users/edwardlauv/Desktop/HealthCareAPI/handler/user_handler.go line=20
+time="2021-04-18T13:19:09.813286+07:00" level=error msg="pq: duplicate key value violates unique constraint \"user_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-04-18T13:19:16.111537+07:00" level=error msg="pq: duplicate key value violates unique constraint \"user_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-04-18T13:19:31.340229+07:00" level=error msg="pq: duplicate key value violates unique constraint \"user_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29

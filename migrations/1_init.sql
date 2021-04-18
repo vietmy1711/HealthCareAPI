@@ -1,10 +1,9 @@
 -- +migrate Up
-create table "account" (
-    "userid" text primary key,
-    "fullname" text,
-    "email" text,
-    "password" text,
-    "created_at" date NOT NULL
+create table "user"(
+    "user_id" text primary key,
+    "full_name" text,
+    "gender" int,
+    "blood" int
 );
 -- +migrate Down
-DROP TABLE account;
+DROP TABLE "user";

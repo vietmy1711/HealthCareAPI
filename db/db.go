@@ -9,16 +9,20 @@ import (
 
 type Sql struct {
 	DB *sqlx.DB
+	Host string
+	Port int
+	Username string
+	Password string
+	Dbname string
 }
 
 func (s *Sql) Connect() {
-	s.DB = sqlx.MustConnect("postgres", "host=ec2-52-71-161-140.compute-1.amazonaws.com port=5432 user=gypzkqyxameflw password=fa0bd299af4a929d7e232ea777cde4def55217b7f0e65ec698966c5b35052c72 dbname=d5e9m1htvn9vqg sslmode=require")
-
+	dataSource := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", s.Host, s.Port, s.Username, s.Password, s.Dbname)
+	s.DB = sqlx.MustConnect("postgres", dataSource)
 	if err := s.DB.Ping(); err != nil {
 		log.Error(err.Error())
 		return
 	}
-// my ngu
 	fmt.Println("Connected to database....")
 }
 
