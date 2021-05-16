@@ -1,0 +1,10 @@
+time="2021-05-15T19:46:41.900286+07:00" level=error msg="pq: relation \"user\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=29
+time="2021-05-15T21:10:45.164549+07:00" level=error msg="pq: syntax error at or near \":\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=32
+time="2021-05-15T21:11:27.996165+07:00" level=error msg="pq: syntax error at or near \":\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=27
+time="2021-05-15T21:13:24.665766+07:00" level=error msg="pq: syntax error at or near \":\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=27
+time="2021-05-15T21:14:05.217485+07:00" level=error msg="pq: duplicate key value violates unique constraint \"account_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=30
+time="2021-05-15T21:15:31.769336+07:00" level=error msg="pq: syntax error at or near \":\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26
+time="2021-05-15T21:18:43.810813+07:00" level=error msg="pq: duplicate key value violates unique constraint \"account_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=30
+time="2021-05-15T21:19:01.310632+07:00" level=error msg="pq: syntax error at or near \":\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26
+time="2021-05-15T21:20:55.116427+07:00" level=error msg="pq: syntax error at or near \":\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26
+time="2021-05-15T21:28:51.814744+07:00" level=error msg="pq: syntax error at or near \":\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26

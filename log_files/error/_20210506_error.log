@@ -1,0 +1,1 @@
+time="2021-05-06T15:21:14.040554+07:00" level=error msg="pq: syntax error at or near \":\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=32

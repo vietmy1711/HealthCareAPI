@@ -30,11 +30,15 @@ func main() {
 	userHandler := handler.UserHandler{
 		UserRepo: repo_impl.NewUserRepo(sql),
 	}
+	healthHandler := handler.HealthdayHandler{
+		HealthdayRepo: repo_impl.NewHealthRepo(sql),
+	}
 
 	e := echo.New()
 	api := router.API {
 		Echo:       e,
 		UserHandler: userHandler,
+		HealthdayHandler: healthHandler,
 	}
 	api.SetupRouter()
 

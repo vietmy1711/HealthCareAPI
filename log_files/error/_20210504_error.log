@@ -1,0 +1,13 @@
+time="2021-05-04T22:01:29.13464+07:00" level=error msg="pq: duplicate key value violates unique constraint \"healthday_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=24
+time="2021-05-04T22:03:38.431287+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=24
+time="2021-05-04T22:05:36.34457+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=24
+time="2021-05-04T22:06:08.777642+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=24
+time="2021-05-04T22:11:15.844798+07:00" level=error msg="pq: duplicate key value violates unique constraint \"healthday_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=24
+time="2021-05-04T22:11:42.740067+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=24
+time="2021-05-04T22:17:47.32476+07:00" level=error msg="pq: column \"create_at\" of relation \"healthday\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26
+time="2021-05-04T22:18:59.773561+07:00" level=error msg="pq: column \"create_at\" of relation \"healthday\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26
+time="2021-05-04T22:20:54.6284+07:00" level=error msg="pq: column \"create_at\" of relation \"healthday\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26
+time="2021-05-04T22:34:24.070728+07:00" level=error msg="pq: column \"create_at\" of relation \"healthday\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=27
+time="2021-05-04T22:52:19.666311+07:00" level=error msg="pq: column \"create_at\" of relation \"healthday\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=27
+time="2021-05-04T22:53:40.874457+07:00" level=error msg="pq: column \"heart_rate\" of relation \"healthday\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=37
+time="2021-05-04T22:58:29.93002+07:00" level=error msg="pq: column \"mindfulness\" of relation \"healthday\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=37

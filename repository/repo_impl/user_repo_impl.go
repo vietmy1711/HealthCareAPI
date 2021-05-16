@@ -14,15 +14,15 @@ type UserRepoImpl struct {
 }
 
 func NewUserRepo(sql *db.Sql) repository.UserRepo {
-	return &UserRepoImpl{
+	return UserRepoImpl{
 		sql: sql,
 	}
 }
 
 func (u UserRepoImpl) SaveUser(context context.Context, user model.User) (model.User, error) {
 	statement := `
-		INSERT INTO "user"(user_id, full_name, gender, blood)
-		VALUES(:user_id, :full_name, :gender, :blood)
+		INSERT INTO "account"(userid, username, blood, gender)
+		VALUES(:userid, :username, :blood, :gender)
 	`
 	_, err := u.sql.DB.NamedExecContext(context, statement, user)
 	if err != nil {

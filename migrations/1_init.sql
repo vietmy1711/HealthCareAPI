@@ -1,9 +1,27 @@
 -- +migrate Up
-create table "user"(
-    "user_id" text primary key,
-    "full_name" text,
-    "gender" int,
-    "blood" int
+CREATE TABLE "account"
+(
+    "iduser"   varchar PRIMARY KEY,
+    "username" varchar,
+    "blood"    integer,
+    "gender"   integer
 );
+
+CREATE TABLE "healthday"
+(
+    "iduser"    varchar,
+    "createat"  date PRIMARY KEY,
+    "water"     integer,
+    "steps"     integer,
+    "heartrate" integer,
+    "calogries" integer,
+    "height"    float,
+    "weight"    float
+);
+
+ALTER TABLE "healthday"
+    ADD CONSTRAINT "acountheath" FOREIGN KEY ("iduser") REFERENCES "account" ("iduser");
+
 -- +migrate Down
+DROP TABLE "healthday";
 DROP TABLE "user";

@@ -1,0 +1,5 @@
+time="2021-05-05T14:08:12.878207+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=34
+time="2021-05-05T14:08:47.926825+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=34
+time="2021-05-05T14:13:34.976379+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=33
+time="2021-05-05T14:16:50.979271+07:00" level=error msg="pq: syntax error at or near \":\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=32
+time="2021-05-05T14:19:59.703379+07:00" level=error msg="pq: syntax error at or near \":\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=32

@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"fmt"
 	"github.com/heroku/go-getting-started/log"
 	"github.com/heroku/go-getting-started/model"
 	"github.com/heroku/go-getting-started/model/req"
@@ -24,7 +23,6 @@ func (u *UserHandler) HandleSignUp(c echo.Context) error {
 			Data:       nil,
 		})
 	}
-	fmt.Printf(req.Userid)
 	user := model.User{
 		UserId: req.Userid,
 		FullName: req.FullName,
@@ -44,6 +42,6 @@ func (u *UserHandler) HandleSignUp(c echo.Context) error {
 	return c.JSON(http.StatusOK, model.Response{
 		StatusCode: http.StatusOK,
 		Message:    "Xử lý thành công",
-		Data:       user,
+		Data:       nil,
 	})
 }
