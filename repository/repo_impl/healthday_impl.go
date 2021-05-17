@@ -2,11 +2,12 @@ package repo_impl
 
 import (
 	"context"
+	"github.com/heroku/go-getting-started/banana"
 	"github.com/heroku/go-getting-started/db"
 	"github.com/heroku/go-getting-started/log"
 	"github.com/heroku/go-getting-started/model"
-	"github.com/heroku/go-getting-started/repository"
 	"github.com/lib/pq"
+	"time"
 	_ "time"
 )
 
@@ -19,41 +20,33 @@ func (u HealthDayRepoImpl) SaveHealthDay(context context.Context, health model.H
 			INSERT INTO "healthday"(userid, createat, water, steps, heartrate, calogries, height, weight)
 			VALUES(:userid, :createat, :water, :steps, :heartrate, :calogries, :height, :weight);
 		`
+	health.Createat = time.Now()
 	_, err := u.sql.DB.NamedExecContext(context, statement, health)
 	if err != nil {
 		log.Error(err.Error())
 		if err, ok := err.(*pq.Error); ok {
 			if err.Code.Name() == "unique_violation" {
-				return health, nil
+				return health, banana.HealthConflict
 			}
 		}
-		return health, nil
+		return health, err
 	}
 
 	return health, nil
 }
 
-func (u HealthDayRepoImpl) GetInfoHealth(context context.Context, health model.HealthDay) (model.HealthDay, error) {
-	var healthday = model.HealthDay{}
-	statement := `
-		INSERT INTO "user"(user_id, full_name, gender, blood)
-		VALUES(:user_id, :full_name, :gender, :blood)
-	`
-	err := u.sql.DB.GetContext(context, &healthday, statement)
+func (u HealthDayRepoImpl) GetInfoHealth(context context.Context, health string) ([]model.HealthDay, error) {
+	//var healthday = model.HealthDay{}
+	var listheathday []model.HealthDay
+	err := u.sql.DB.SelectContext(context, &listheathday, "SELECT * FROM healthday WHERE userid = $1 ORDER BY createat ASC LIMIT $2", health, 7)
 	if err != nil {
 		log.Error(err.Error())
-		if err, ok := err.(*pq.Error); ok {
-			if err.Code.Name() == "unique_violation" {
-				return healthday, nil
-			}
-		}
-		return healthday, nil
+		return listheathday, err
 	}
-
-	return healthday, nil
+	return listheathday, nil
 }
 
-func NewHealthRepo(sql *db.Sql) repository.HealthyRepo {
+func NewHealthRepo(sql *db.Sql) HealthDayRepoImpl {
 	return HealthDayRepoImpl{
 		sql: sql,
 	}

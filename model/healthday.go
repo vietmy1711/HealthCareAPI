@@ -1,5 +1,7 @@
 package model
 
+import "time"
+
 //"iduser" varchar,
 //"createat" date PRIMARY KEY,
 //"water" integer,
@@ -11,7 +13,7 @@ package model
 
 type HealthDay struct {
 	Userid string `json:"userid" db:"userid"`
-	Createat string `json:"createat" db:"createat"`
+	Createat time.Time `json:"createat" db:"createat"`
 	Water int `json:"water" db:"water"`
 	Steps int `json:"steps" db:"steps"`
 	Heartrate int `json:"heartrate" db:"heartrate"`

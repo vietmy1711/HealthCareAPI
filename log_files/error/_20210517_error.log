@@ -1,0 +1,12 @@
+time="2021-05-17T08:34:35.374251+07:00" level=error msg="pq: duplicate key value violates unique constraint \"healthday_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26
+time="2021-05-17T16:31:03.669629+07:00" level=error msg="scannable dest type slice with >1 columns (8) in result" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=42
+time="2021-05-17T16:31:45.378927+07:00" level=error msg="scannable dest type slice with >1 columns (8) in result" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=42
+time="2021-05-17T16:32:19.414925+07:00" level=error msg="scannable dest type slice with >1 columns (8) in result" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=42
+time="2021-05-17T21:47:49.907877+07:00" level=error msg="pq: duplicate key value violates unique constraint \"healthday_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=25
+time="2021-05-17T21:49:32.679895+07:00" level=error msg="pq: duplicate key value violates unique constraint \"healthday_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=25
+time="2021-05-17T21:51:45.670417+07:00" level=error msg="pq: duplicate key value violates unique constraint \"healthday_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=25
+time="2021-05-17T21:53:23.454434+07:00" level=error msg="pq: duplicate key value violates unique constraint \"healthday_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=25
+time="2021-05-17T21:55:08.136019+07:00" level=error msg="pq: duplicate key value violates unique constraint \"healthday_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26
+time="2021-05-17T21:55:32.474931+07:00" level=error msg="pq: duplicate key value violates unique constraint \"healthday_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26
+time="2021-05-17T23:23:46.046243+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=44
+time="2021-05-17T23:25:36.827267+07:00" level=error msg="pq: duplicate key value violates unique constraint \"healthday_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26

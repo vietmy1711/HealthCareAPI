@@ -45,3 +45,21 @@ func (u *UserHandler) HandleSignUp(c echo.Context) error {
 		Data:       nil,
 	})
 }
+
+func (u *UserHandler) GetUser(c echo.Context) error {
+	req := req.ReqGetUser{}
+	if err := c.Bind(&req); err != nil {
+		log.Error(err.Error())
+		return c.JSON(http.StatusBadRequest, model.Response{
+			StatusCode: http.StatusBadRequest,
+			Message:    err.Error(),
+			Data:       nil,
+		})
+	}
+	user, _ := u.UserRepo.GetUser(c.Request().Context(), req.Userid)
+	return c.JSON(http.StatusOK, model.Response{
+		StatusCode: http.StatusOK,
+		Message:    "Xử lý thành công",
+		Data:       user,
+	})
+}

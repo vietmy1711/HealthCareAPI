@@ -25,7 +25,6 @@ func (u *HealthdayHandler) HandleSaveHealthDay(c echo.Context) error {
 	}
 	healthday := model.HealthDay{
 		Userid: req.Userid,
-		Createat: req.Createat,
 		Water: req.Water,
 		Steps: req.Steps,
 		Heartrate: req.Heartrate,
@@ -50,7 +49,7 @@ func (u *HealthdayHandler) HandleSaveHealthDay(c echo.Context) error {
 }
 
 func (u *HealthdayHandler) HandleGetHealthDay(c echo.Context) error {
-	req := req.ReqHealthDay{}
+	req := req.ReqGetHealthDay{}
 	if err := c.Bind(&req); err != nil {
 		log.Error(err.Error())
 		return c.JSON(http.StatusBadRequest, model.Response{
@@ -59,22 +58,10 @@ func (u *HealthdayHandler) HandleGetHealthDay(c echo.Context) error {
 			Data:       nil,
 		})
 	}
-	healthday := model.HealthDay{
-
-	}
-
-	user, err := u.HealthdayRepo.GetInfoHealth(c.Request().Context(), healthday)
-	if err != nil {
-		return c.JSON(http.StatusConflict, model.Response{
-			StatusCode: http.StatusConflict,
-			Message:    err.Error(),
-			Data:       nil,
-		})
-	}
-
+	health, _ := u.HealthdayRepo.GetInfoHealth(c.Request().Context(), req.Userid)
 	return c.JSON(http.StatusOK, model.Response{
 		StatusCode: http.StatusOK,
 		Message:    "Xử lý thành công",
-		Data:       user,
+		Data:       health,
 	})
 }

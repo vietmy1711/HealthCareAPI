@@ -2,7 +2,6 @@ package req
 
 type ReqHealthDay struct {
 	Userid string `json:"userid,omitempty" validate:"required`
-	Createat string `json:"createat,omitempty" validate:"required`
 	Water int `json:"water,omitempty" validate:"required`
 	Steps int `json:"steps,omitempty" validate:"required`
 	Heartrate int `json:"heartrate,omitempty" validate:"required`
