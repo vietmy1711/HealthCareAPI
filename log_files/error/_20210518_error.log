@@ -1,0 +1,14 @@
+time="2021-05-18T16:16:12.27335+07:00" level=error msg="pq: column \"userid\" of relation \"account\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=28
+time="2021-05-18T16:18:12.443899+07:00" level=error msg="pq: column \"userid\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=44
+time="2021-05-18T16:18:16.844814+07:00" level=error msg="pq: column \"userid\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=43
+time="2021-05-18T16:18:25.848533+07:00" level=error msg="pq: column \"userid\" of relation \"healthday\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26
+time="2021-05-18T16:19:03.259192+07:00" level=error msg="pq: column \"userid\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=43
+time="2021-05-18T16:19:10.211837+07:00" level=error msg="pq: column \"userid\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=43
+time="2021-05-18T16:19:55.096179+07:00" level=error msg="missing destination name iduser in *[]model.HealthDay" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=43
+time="2021-05-18T16:19:59.748416+07:00" level=error msg="pq: duplicate key value violates unique constraint \"healthday_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26
+time="2021-05-18T16:20:07.827794+07:00" level=error msg="missing destination name iduser in *[]model.HealthDay" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=43
+time="2021-05-18T16:20:16.123758+07:00" level=error msg="pq: duplicate key value violates unique constraint \"healthday_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=26
+time="2021-05-18T16:20:59.467389+07:00" level=error msg="missing destination name iduser in *[]model.HealthDay" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=43
+time="2021-05-18T16:23:16.105489+07:00" level=error msg="missing destination name iduser in *[]model.HealthDay" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=43
+time="2021-05-18T16:26:08.866421+07:00" level=error msg="missing destination name iduser in *[]model.HealthDay" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=43
+time="2021-05-18T16:42:41.602501+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=44
