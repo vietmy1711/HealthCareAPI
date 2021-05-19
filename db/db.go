@@ -17,7 +17,8 @@ type Sql struct {
 }
 
 func (s *Sql) Connect() {
-	dataSource := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s", s.Host, s.Port, s.Username, s.Password, s.Dbname)
+	dataSource := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", s.Host, s.Port, s.Username, s.Password, s.Dbname)
+	//dataSource := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s", s.Host, s.Port, s.Username, s.Password, s.Dbname)
 	s.DB = sqlx.MustConnect("postgres", dataSource)
 	if err := s.DB.Ping(); err != nil {
 		log.Error(err.Error())

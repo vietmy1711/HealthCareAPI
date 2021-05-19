@@ -2,6 +2,8 @@ package repo_impl
 
 import (
 	"context"
+	"database/sql"
+	"fmt"
 	"github.com/heroku/go-getting-started/banana"
 	"github.com/heroku/go-getting-started/db"
 	"github.com/heroku/go-getting-started/log"
@@ -38,6 +40,15 @@ func (u HealthDayRepoImpl) SaveHealthDay(context context.Context, health model.H
 func (u HealthDayRepoImpl) GetInfoHealth(context context.Context, health string) ([]model.HealthDay, error) {
 	//var healthday = model.HealthDay{}
 	var listheathday []model.HealthDay
+	var user model.User
+	error := u.sql.DB.GetContext(context, &user, "SELECT * FROM account WHERE userid = $1", health)
+	if error != nil {
+		if error == sql.ErrNoRows {
+			return listheathday, error
+		}
+		return listheathday, error
+	}
+	fmt.Printf("get health")
 	err := u.sql.DB.SelectContext(context, &listheathday, "SELECT * FROM healthday WHERE userid = $1 ORDER BY createat ASC LIMIT $2", health, 7)
 	if err != nil {
 		log.Error(err.Error())

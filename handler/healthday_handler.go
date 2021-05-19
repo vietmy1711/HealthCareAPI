@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"github.com/heroku/go-getting-started/banana"
 	"github.com/heroku/go-getting-started/log"
 	"github.com/heroku/go-getting-started/model"
 	"github.com/heroku/go-getting-started/model/req"
@@ -35,9 +36,16 @@ func (u *HealthdayHandler) HandleSaveHealthDay(c echo.Context) error {
 	print(req.Userid)
 	_, err := u.HealthdayRepo.SaveHealthDay(c.Request().Context(), healthday)
 	if err != nil {
-		return c.JSON(http.StatusConflict, model.Response{
-			StatusCode: http.StatusConflict,
-			Message:    err.Error(),
+		if err == banana.HealthConflict {
+			return c.JSON(http.StatusConflict, model.Response{
+				StatusCode: http.StatusConflict,
+				Message:    err.Error(),
+				Data:       nil,
+			})
+		}
+		return c.JSON(http.StatusNotFound, model.Response{
+			StatusCode: http.StatusNotFound,
+			Message:    banana.UserNotFound.Error(),
 			Data:       nil,
 		})
 	}
@@ -58,7 +66,14 @@ func (u *HealthdayHandler) HandleGetHealthDay(c echo.Context) error {
 			Data:       nil,
 		})
 	}
-	health, _ := u.HealthdayRepo.GetInfoHealth(c.Request().Context(), req.Userid)
+	health, err := u.HealthdayRepo.GetInfoHealth(c.Request().Context(), req.Userid)
+	if err != nil {
+		return c.JSON(http.StatusNotFound, model.Response{
+			StatusCode: http.StatusNotFound,
+			Message:    "User Khong Ton Tai",
+			Data:       nil,
+		})
+	}
 	return c.JSON(http.StatusOK, model.Response{
 		StatusCode: http.StatusOK,
 		Message:    "Xử lý thành công",

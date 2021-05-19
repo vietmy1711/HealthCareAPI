@@ -2,6 +2,8 @@ package repo_impl
 
 import (
 	"context"
+	"database/sql"
+	"github.com/heroku/go-getting-started/banana"
 	"github.com/heroku/go-getting-started/db"
 	"github.com/heroku/go-getting-started/log"
 	"github.com/heroku/go-getting-started/model"
@@ -28,12 +30,11 @@ func (u UserRepoImpl) SaveUser(context context.Context, user model.User) (model.
 		log.Error(err.Error())
 		if err, ok := err.(*pq.Error); ok {
 			if err.Code.Name() == "unique_violation" {
-				return user, nil
+				return user, banana.UserConflict
 			}
 		}
 		return user, nil
 	}
-
 	return user, nil
 }
 
@@ -42,6 +43,9 @@ func (u UserRepoImpl) GetUser(context context.Context, userid string) (model.Use
 	err := u.sql.DB.GetContext(context, &user, "SELECT * FROM account WHERE userid = $1", userid)
 	if err != nil {
 		log.Error(err.Error())
+		if err == sql.ErrNoRows {
+			return user, err
+		}
 		return user, err
 	}
 	return user, nil
