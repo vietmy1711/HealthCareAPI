@@ -80,3 +80,28 @@ func (u *HealthdayHandler) HandleGetHealthDay(c echo.Context) error {
 		Data:       health,
 	})
 }
+
+func (u *HealthdayHandler) HandleGetInforHealthInDay(c echo.Context) error {
+	req := req.ReqGetHealthDay{}
+	if err := c.Bind(&req); err != nil {
+		log.Error(err.Error())
+		return c.JSON(http.StatusBadRequest, model.Response{
+			StatusCode: http.StatusBadRequest,
+			Message:    err.Error(),
+			Data:       nil,
+		})
+	}
+	health, err := u.HealthdayRepo.GetInforHealthInDay(c.Request().Context(), req.Userid)
+	if err != nil {
+		return c.JSON(http.StatusNotFound, model.Response{
+			StatusCode: http.StatusNotFound,
+			Message:    "User Khong Ton Tai",
+			Data:       nil,
+		})
+	}
+	return c.JSON(http.StatusOK, model.Response{
+		StatusCode: http.StatusOK,
+		Message:    "Xử lý thành công",
+		Data:       health,
+	})
+}

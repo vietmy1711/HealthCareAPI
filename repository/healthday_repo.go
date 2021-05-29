@@ -8,4 +8,5 @@ import (
 type HealthyRepo interface {
 	SaveHealthDay(context context.Context, health model.HealthDay) (model.HealthDay, error)
 	GetInfoHealth(context context.Context, health string) ([]model.HealthDay, error) // get 7 day about info health
+	GetInforHealthInDay(context context.Context, userid string) ([]model.HealthDay, error)
 }

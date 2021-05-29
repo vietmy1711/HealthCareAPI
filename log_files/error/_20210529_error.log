@@ -1,0 +1,2 @@
+time="2021-05-29T19:21:43.210998+07:00" level=error msg="pq: relation \"account\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=30
+time="2021-05-29T19:26:03.339663+07:00" level=error msg="pq: relation \"account\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=45

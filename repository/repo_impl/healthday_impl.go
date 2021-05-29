@@ -57,6 +57,26 @@ func (u HealthDayRepoImpl) GetInfoHealth(context context.Context, health string)
 	return listheathday, nil
 }
 
+func (u HealthDayRepoImpl) GetInforHealthInDay(context context.Context, userid string) ([]model.HealthDay, error) {
+	//var healthday = model.HealthDay{}
+	var listheathday []model.HealthDay
+	var user model.User
+	error := u.sql.DB.GetContext(context, &user, "SELECT * FROM account WHERE userid = $1", userid)
+	if error != nil {
+		if error == sql.ErrNoRows {
+			return listheathday, error
+		}
+		return listheathday, error
+	}
+	fmt.Printf("get health")
+	err := u.sql.DB.SelectContext(context, &listheathday, "SELECT * FROM healthday  WHERE createat = $1 AND userid = $2", time.Now(), userid )
+	if err != nil {
+		log.Error(err.Error())
+		return listheathday, err
+	}
+	return listheathday, nil
+}
+
 func NewHealthRepo(sql *db.Sql) HealthDayRepoImpl {
 	return HealthDayRepoImpl{
 		sql: sql,

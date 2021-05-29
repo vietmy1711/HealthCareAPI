@@ -37,3 +37,5 @@ time="2021-05-19T21:52:57.194874+07:00" level=error msg="pq: duplicate key value
 time="2021-05-19T21:53:02.046476+07:00" level=error msg="pq: insert or update on table \"healthday\" violates foreign key constraint \"accountheath\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=28
 time="2021-05-19T21:54:13.890245+07:00" level=error msg="pq: duplicate key value violates unique constraint \"account_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=30
 time="2021-05-19T21:55:27.791849+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=45
+time="2021-05-20T00:47:49.863423+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=45
+time="2021-05-20T00:48:19.894345+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=45

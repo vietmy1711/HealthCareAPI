@@ -49,7 +49,7 @@ func main() {
 	}
 	api.SetupRouter()
 
-	e.Logger.Fatal(e.Start(":"+os.Getenv("PORT")))
+	e.Logger.Fatal(e.Start(":3000"))
 }
 
 
