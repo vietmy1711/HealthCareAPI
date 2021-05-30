@@ -19,8 +19,8 @@ type HealthDayRepoImpl struct {
 
 func (u HealthDayRepoImpl) SaveHealthDay(context context.Context, health model.HealthDay) (model.HealthDay, error) {
 	statement := `
-			INSERT INTO "healthday"(userid, createat, water, steps, heartrate, calogries, height, weight)
-			VALUES(:userid, :createat, :water, :steps, :heartrate, :calogries, :height, :weight);
+			INSERT INTO "healthday"
+			VALUES(:userid, :createat, :water, :steps, :heartrate, :calogries, :height, :weight, :active_energy_bunred, :basal_energy_bunred, :blood_oxygen);
 		`
 	health.Createat = time.Now()
 	_, err := u.sql.DB.NamedExecContext(context, statement, health)
@@ -37,7 +37,7 @@ func (u HealthDayRepoImpl) SaveHealthDay(context context.Context, health model.H
 	return health, nil
 }
 
-func (u HealthDayRepoImpl) GetInfoHealth(context context.Context, health string) ([]model.HealthDay, error) {
+func (u HealthDayRepoImpl) GetInfoHealthInWeek(context context.Context, health string) ([]model.HealthDay, error) {
 	//var healthday = model.HealthDay{}
 	var listheathday []model.HealthDay
 	var user model.User
@@ -49,7 +49,13 @@ func (u HealthDayRepoImpl) GetInfoHealth(context context.Context, health string)
 		return listheathday, error
 	}
 	fmt.Printf("get health")
-	err := u.sql.DB.SelectContext(context, &listheathday, "SELECT * FROM healthday WHERE userid = $1 ORDER BY createat ASC LIMIT $2", health, 7)
+	err := u.sql.DB.SelectContext(context, &listheathday, "SELECT createat::DATE, MAX(WATER) AS WATER, MAX(STEPS) AS " +
+		"STEPS, AVG(HEARTRATE) AS HEARTRATE, " +
+		"AVG(CALORIES) AS CALORIES, MAX(HEIGHT) AS HEIGHT, MAX(HEIGHT) AS HEIGHT, " +
+		"AVG(active_energy_bunred) AS active_energy_bunred, AVG(basal_energy_bunred) " +
+		"AS basal_energy_bunred, AVG(blood_oxygen) AS blood_oxygen FROM healthday " +
+		"WHERE userid = $1 AND createat > CURRENT_DATE - 7 " +
+		"GROUP BY createat::DATE ORDER BY createat::DATE DESC", health)
 	if err != nil {
 		log.Error(err.Error())
 		return listheathday, err
@@ -68,8 +74,9 @@ func (u HealthDayRepoImpl) GetInforHealthInDay(context context.Context, userid s
 		}
 		return listheathday, error
 	}
-	fmt.Printf("get health")
-	err := u.sql.DB.SelectContext(context, &listheathday, "SELECT * FROM healthday  WHERE createat = $1 AND userid = $2", time.Now(), userid )
+	fmt.Printf("get health day")
+	print(time.Now().String())
+	err := u.sql.DB.SelectContext(context, &listheathday, "SELECT * FROM healthday  WHERE createat::date = $1 AND userid = $2", time.Now(), userid )
 	if err != nil {
 		log.Error(err.Error())
 		return listheathday, err

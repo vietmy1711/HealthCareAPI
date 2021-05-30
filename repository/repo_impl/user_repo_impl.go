@@ -22,8 +22,8 @@ func NewUserRepo(sql *db.Sql) UserRepoImpl {
 
 func (u UserRepoImpl) SaveUser(context context.Context, user model.User) (model.User, error) {
 	statement := `
-		INSERT INTO "account"(userid, username, blood, gender)
-		VALUES(:userid, :username, :blood, :gender)
+		INSERT INTO "account"
+		VALUES(:userid, :username, :blood, :gender, :age)
 	`
 	_, err := u.sql.DB.NamedExecContext(context, statement, user)
 	if err != nil {

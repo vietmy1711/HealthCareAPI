@@ -13,7 +13,7 @@ CREATE TABLE "healthday" (
                              "water" integer,
                              "steps" integer,
                              "heartrate" integer,
-                             "calogries" integer,
+                             "calories" integer,
                              "height" float,
                              "weight" float,
                              "active_energy_bunred" float,
@@ -23,6 +23,7 @@ CREATE TABLE "healthday" (
 );
 
 ALTER TABLE "healthday" ADD CONSTRAINT "accountheath" FOREIGN KEY ("userid") REFERENCES "account" ("userid");
+
 -- +migrate Down
 DROP TABLE "healthday";
 DROP TABLE "account";

@@ -28,6 +28,7 @@ func (u *UserHandler) HandleSignUp(c echo.Context) error {
 		FullName: req.FullName,
 		Gender: req.Gender,
 		Blood: req.Blood,
+		Age: req.Age,
 	}
 
 	user, err := u.UserRepo.SaveUser(c.Request().Context(), user)

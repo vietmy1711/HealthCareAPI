@@ -32,6 +32,9 @@ func (u *HealthdayHandler) HandleSaveHealthDay(c echo.Context) error {
 		Calogries: req.Calogries,
 		Height: req.Height,
 		Weight: req.Weight,
+		ActiveEnergyBunred: req.ActiveEnergyBunred,
+		BasalEnergyBunred: req.BasalEnergyBunred,
+		BloodOxygen: req.BloodOxygen,
 	}
 	print(req.Userid)
 	_, err := u.HealthdayRepo.SaveHealthDay(c.Request().Context(), healthday)
@@ -56,7 +59,7 @@ func (u *HealthdayHandler) HandleSaveHealthDay(c echo.Context) error {
 	})
 }
 
-func (u *HealthdayHandler) HandleGetHealthDay(c echo.Context) error {
+func (u *HealthdayHandler) HandleGetInfoHealthInWeek(c echo.Context) error {
 	req := req.ReqGetHealthDay{}
 	if err := c.Bind(&req); err != nil {
 		log.Error(err.Error())
@@ -66,7 +69,7 @@ func (u *HealthdayHandler) HandleGetHealthDay(c echo.Context) error {
 			Data:       nil,
 		})
 	}
-	health, err := u.HealthdayRepo.GetInfoHealth(c.Request().Context(), req.Userid)
+	health, err := u.HealthdayRepo.GetInfoHealthInWeek(c.Request().Context(), req.Userid)
 	if err != nil {
 		return c.JSON(http.StatusNotFound, model.Response{
 			StatusCode: http.StatusNotFound,

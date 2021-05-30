@@ -16,6 +16,6 @@ func (api *API) SetupRouter() {
 	api.Echo.POST("/health/save-health", api.HealthdayHandler.HandleSaveHealthDay)
 
 	api.Echo.GET("/health/get-user", api.UserHandler.GetUser)
-	api.Echo.GET("/health/get-health", api.HealthdayHandler.HandleGetHealthDay)
-	api.Echo.GET("/health/info-healthday", api.HealthdayHandler.HandleGetInforHealthInDay)
+	api.Echo.GET("/health/get-healthinweek", api.HealthdayHandler.HandleGetInfoHealthInWeek)
+	api.Echo.GET("/health/get-healthinday", api.HealthdayHandler.HandleGetInforHealthInDay)
 }
