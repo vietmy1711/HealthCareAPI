@@ -20,7 +20,7 @@ type HealthDayRepoImpl struct {
 func (u HealthDayRepoImpl) SaveHealthDay(context context.Context, health model.HealthDay) (model.HealthDay, error) {
 	statement := `
 			INSERT INTO "healthday"
-			VALUES(:userid, :createat, :water, :steps, :heartrate, :calogries, :height, :weight, :active_energy_bunred, :basal_energy_bunred, :blood_oxygen);
+			VALUES(:userid, :createat, :water, :steps, :heartrate, :calories, :height, :weight, :active_energy_bunred, :basal_energy_bunred, :blood_oxygen);
 		`
 	health.Createat = time.Now()
 	_, err := u.sql.DB.NamedExecContext(context, statement, health)

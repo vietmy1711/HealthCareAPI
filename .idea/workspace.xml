@@ -5,17 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler/healthday_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/healthday_handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/user_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/user_handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log_files/error/_20210530_error.log" beforeDir="false" afterPath="$PROJECT_DIR$/log_files/error/_20210530_error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/1_init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/1_init.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/healthday.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/healthday.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/req/req_healthday.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/req/req_healthday.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/req/req_signup.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/req/req_signup.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/healthday_repo.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/healthday_repo.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repository/repo_impl/healthday_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/repo_impl/healthday_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/repo_impl/user_repo_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/repo_impl/user_repo_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/api.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -17,7 +17,7 @@ type HealthDay struct {
 	Water int `json:"water" db:"water"`
 	Steps int `json:"steps" db:"steps"`
 	Heartrate float64 `json:"heartrate" db:"heartrate"`
-	Calogries float64 `json:"calogries" db:"calories"`
+	Calories float64 `json:"calories" db:"calories"`
 	Height float64 `json:"height" db:"height"`
 	Weight float64 `json:"weight" db:"weight"`
 	ActiveEnergyBunred float64 `json:"active_energy_bunred" db:"active_energy_bunred"`
