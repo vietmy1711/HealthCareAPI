@@ -4,7 +4,8 @@ CREATE TABLE "account" (
                            "username" varchar,
                            "blood" integer,
                            "gender" integer,
-                           "age" integer
+                           "age" integer,
+                           "token" varchar
 );
 
 CREATE TABLE "healthday" (
@@ -23,7 +24,6 @@ CREATE TABLE "healthday" (
 );
 
 ALTER TABLE "healthday" ADD CONSTRAINT "accountheath" FOREIGN KEY ("userid") REFERENCES "account" ("userid");
-
 -- +migrate Down
 DROP TABLE "healthday";
 DROP TABLE "account";

@@ -6,4 +6,5 @@ type ReqSignUp struct {
 	Gender int `json:"gender,omitempty" validate:"required"`
 	Blood int `json:"blood,omitempty" validate:"required"`
 	Age int `json:"age,omitempty" validate:"required"`
+	Token string `json:"token,omitempty" validate:"required"`
 }

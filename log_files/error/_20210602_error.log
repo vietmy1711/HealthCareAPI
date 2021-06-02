@@ -1,0 +1,3 @@
+time="2021-06-02T14:52:41.447769+07:00" level=error msg="sql: no rows in result set" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=46
+time="2021-06-02T14:54:56.003171+07:00" level=error msg="pq: duplicate key value violates unique constraint \"account_pkey\"" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=30
+time="2021-06-02T14:54:56.006632+07:00" level=error msg=unique_violation file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/user_repo_impl.go line=32
