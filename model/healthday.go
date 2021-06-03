@@ -20,8 +20,8 @@ type HealthDay struct {
 	Calories float64 `json:"calories" db:"calories"`
 	Height float64 `json:"height" db:"height"`
 	Weight float64 `json:"weight" db:"weight"`
-	ActiveEnergyBunred float64 `json:"active_energy_bunred" db:"active_energy_bunred"`
-	BasalEnergyBunred float64 `json:"basal_energy_bunred" db:"basal_energy_bunred"`
+	ActiveEnergyBurned float64 `json:"active_energy_burned" db:"active_energy_burned"`
+	BasalEnergyBurned float64 `json:"basal_energy_burned" db:"basal_energy_burned"`
 	BloodOxygen float64 `json:"blood_oxygen" db:"blood_oxygen"`
 }
 

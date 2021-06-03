@@ -9,12 +9,14 @@ type API struct {
 	Echo *echo.Echo
 	UserHandler handler.UserHandler
 	HealthdayHandler handler.HealthdayHandler
+	NotiHander handler.NotiHandler
 }
 
 func (api *API) SetupRouter() {
 	api.Echo.POST("/user/sign-up", api.UserHandler.HandleSignUp)
 	api.Echo.POST("/health/save-health", api.HealthdayHandler.HandleSaveHealthDay)
 	api.Echo.POST("/health/update-user", api.UserHandler.UpdateUser)
+	api.Echo.POST("/health/checkin", api.NotiHander.PushNoti)
 
 	api.Echo.GET("/health/get-user", api.UserHandler.GetUser)
 	api.Echo.GET("/health/get-healthinweek", api.HealthdayHandler.HandleGetInfoHealthInWeek)

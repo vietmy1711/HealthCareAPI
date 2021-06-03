@@ -8,7 +8,7 @@ type ReqHealthDay struct {
 	Calories float64 `json:"calories,omitempty" validate:"required`
 	Height float64 `json:"height,omitempty" validate:"required`
 	Weight float64 `json:"weight,omitempty" validate:"required`
-	ActiveEnergyBunred float64 `json:"active_energy_bunred,omitempty" validate:"required`
-	BasalEnergyBunred float64 `json:"basal_energy_bunred,omitempty" validate:"required`
+	ActiveEnergyBurned float64 `json:"active_energy_burned,omitempty" validate:"required`
+	BasalEnergyBurned float64 `json:"basal_energy_burned,omitempty" validate:"required`
 	BloodOxygen float64 `json:"blood_oxygen,omitempty" validate:"required`
 }

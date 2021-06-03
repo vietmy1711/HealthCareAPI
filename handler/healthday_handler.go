@@ -32,8 +32,8 @@ func (u *HealthdayHandler) HandleSaveHealthDay(c echo.Context) error {
 		Calories: req.Calories,
 		Height: req.Height,
 		Weight: req.Weight,
-		ActiveEnergyBunred: req.ActiveEnergyBunred,
-		BasalEnergyBunred: req.BasalEnergyBunred,
+		ActiveEnergyBurned: req.ActiveEnergyBurned,
+		BasalEnergyBurned: req.BasalEnergyBurned,
 		BloodOxygen: req.BloodOxygen,
 	}
 	print(req.Userid)

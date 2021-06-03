@@ -20,7 +20,7 @@ type HealthDayRepoImpl struct {
 func (u HealthDayRepoImpl) SaveHealthDay(context context.Context, health model.HealthDay) (model.HealthDay, error) {
 	statement := `
 			INSERT INTO "healthday"
-			VALUES(:userid, :createat, :water, :steps, :heartrate, :calories, :height, :weight, :active_energy_bunred, :basal_energy_bunred, :blood_oxygen);
+			VALUES(:userid, :createat, :water, :steps, :heartrate, :calories, :height, :weight, :active_energy_burned, :basal_energy_burned, :blood_oxygen);
 		`
 	health.Createat = time.Now()
 	_, err := u.sql.DB.NamedExecContext(context, statement, health)
@@ -48,12 +48,12 @@ func (u HealthDayRepoImpl) GetInfoHealthInWeek(context context.Context, health s
 		}
 		return listheathday, error
 	}
-	fmt.Printf("get health")
+	fmt.Printf(health)
 	err := u.sql.DB.SelectContext(context, &listheathday, "SELECT createat::DATE, MAX(WATER) AS WATER, MAX(STEPS) AS " +
 		"STEPS, AVG(HEARTRATE) AS HEARTRATE, " +
-		"AVG(CALORIES) AS CALORIES, MAX(HEIGHT) AS HEIGHT, MAX(HEIGHT) AS HEIGHT, " +
-		"AVG(active_energy_bunred) AS active_energy_bunred, AVG(basal_energy_bunred) " +
-		"AS basal_energy_bunred, AVG(blood_oxygen) AS blood_oxygen FROM healthday " +
+		"AVG(CALORIES) AS CALORIES, MAX(HEIGHT) AS HEIGHT, MAX(WEIGHT) AS WEIGHT, " +
+		"AVG(active_energy_bunred) AS active_energy_burned, AVG(basal_energy_bunred) " +
+		"AS basal_energy_burned, AVG(blood_oxygen) AS blood_oxygen FROM healthday " +
 		"WHERE userid = $1 AND createat > CURRENT_DATE - 7 " +
 		"GROUP BY createat::DATE ORDER BY createat::DATE DESC", health)
 	if err != nil {
@@ -76,7 +76,8 @@ func (u HealthDayRepoImpl) GetInforHealthInDay(context context.Context, userid s
 	}
 	fmt.Printf("get health day")
 	print(time.Now().String())
-	err := u.sql.DB.SelectContext(context, &listheathday, "SELECT * FROM healthday  WHERE createat::date = $1 AND userid = $2", time.Now(), userid )
+	err := u.sql.DB.SelectContext(context, &listheathday, "SELECT water, steps, heartrate, calories, height, weight, active_energy_bunred as active_energy_burned," +
+		"basal_energy_bunred as basal_energy_burned, blood_oxygen FROM healthday  WHERE createat::date = $1 AND userid = $2", time.Now(), userid )
 	if err != nil {
 		log.Error(err.Error())
 		return listheathday, err

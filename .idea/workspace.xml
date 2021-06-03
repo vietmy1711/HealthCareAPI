@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fad060b2-d5a0-4527-9bc3-52c1bcdc444f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/model/req/req_updateuser.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/noti_handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/req/req_Noti.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/noti_repo_impl.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/repo_impl/noti_impl.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/user_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/user_handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/1_init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/1_init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/req/req_signup.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/req/req_signup.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/repo_impl/user_repo_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/repo_impl/user_repo_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/user_repo.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/user_repo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/healthday_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/healthday_handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/healthday.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/healthday.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/req/req_healthday.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/req/req_healthday.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/repo_impl/healthday_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/repo_impl/healthday_impl.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/api.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +31,14 @@
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />

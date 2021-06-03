@@ -41,11 +41,16 @@ func main() {
 		HealthdayRepo: repo_impl.NewHealthRepo(sql),
 	}
 
+	notiHandler := handler.NotiHandler{
+		NotiRepo: repo_impl.NewNotiRepo(sql),
+	}
+
 	e := echo.New()
 	api := router.API {
 		Echo:       e,
 		UserHandler: userHandler,
 		HealthdayHandler: healthHandler,
+		NotiHander: notiHandler,
 	}
 	api.SetupRouter()
 
