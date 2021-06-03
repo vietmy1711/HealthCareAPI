@@ -54,6 +54,8 @@ func main() {
 		NotiHander: notiHandler,
 	}
 	api.SetupRouter()
-	port := os.Getenv("PORT")
-	e.Logger.Fatal(e.Start(":" + port))
+	e.Logger.Fatal(e.Start(":3000"))
+
+	//port := os.Getenv("PORT")
+	//e.Logger.Fatal(e.Start(":" + port))
 }
