@@ -76,13 +76,14 @@ func (u HealthDayRepoImpl) GetInforHealthInDay(context context.Context, userid s
 	}
 	fmt.Printf("get health day")
 	print(time.Now().String())
-	err := u.sql.DB.SelectContext(context, &listheathday, "SELECT water, steps, heartrate, calories, height, weight, active_energy_bunred as active_energy_burned," +
-		"basal_energy_bunred as basal_energy_burned, blood_oxygen FROM healthday  WHERE createat::date = $1 AND userid = $2", time.Now(), userid )
+	err := u.sql.DB.SelectContext(context, &listheathday, "SELECT userid, createat,  water, steps, heartrate, calories, height, weight, active_energy_bunred as active_energy_burned," +
+		"basal_energy_bunred as basal_energy_burned, blood_oxygen FROM healthday  WHERE userid = $1 LIMIT 1", userid )
 	if err != nil {
 		log.Error(err.Error())
 		return listheathday, err
 	}
 	return listheathday, nil
+
 }
 
 func NewHealthRepo(sql *db.Sql) HealthDayRepoImpl {

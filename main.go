@@ -19,20 +19,20 @@ func init() {
 }
 
 func main() {
-	sql := &db.Sql{
-		Host:     "ec2-52-71-161-140.compute-1.amazonaws.com",
-		Port:     5432,
-		Username: "gypzkqyxameflw",
-		Password: "fa0bd299af4a929d7e232ea777cde4def55217b7f0e65ec698966c5b35052c72",
-		Dbname:   "d5e9m1htvn9vqg",
-	}
 	//sql := &db.Sql{
-	//	Host : "localhost",
-	//	Port : 5432,
-	//	Username: "postgres",
-	//	Password: "phucleuit",
-	//	Dbname: "health_api",
+	//	Host:     "ec2-52-71-161-140.compute-1.amazonaws.com",
+	//	Port:     5432,
+	//	Username: "gypzkqyxameflw",
+	//	Password: "fa0bd299af4a929d7e232ea777cde4def55217b7f0e65ec698966c5b35052c72",
+	//	Dbname:   "d5e9m1htvn9vqg",
 	//}
+	sql := &db.Sql{
+		Host : "localhost",
+		Port : 5432,
+		Username: "postgres",
+		Password: "phucleuit",
+		Dbname: "health_api",
+	}
 	sql.Connect()
 	defer sql.Close()
 	userHandler := handler.UserHandler{
@@ -54,8 +54,8 @@ func main() {
 		NotiHander: notiHandler,
 	}
 	api.SetupRouter()
-	//e.Logger.Fatal(e.Start(":3000"))
+	e.Logger.Fatal(e.Start(":3000"))
 
-	port := os.Getenv("PORT")
-	e.Logger.Fatal(e.Start(":" + port))
+	//port := os.Getenv("PORT")
+	//e.Logger.Fatal(e.Start(":" + port))
 }

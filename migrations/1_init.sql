@@ -25,5 +25,6 @@ CREATE TABLE "healthday" (
 
 ALTER TABLE "healthday" ADD CONSTRAINT "accountheath" FOREIGN KEY ("userid") REFERENCES "account" ("userid");
 -- +migrate Down
+
 DROP TABLE "healthday";
 DROP TABLE "account";
