@@ -18,8 +18,8 @@ func (api *API) SetupRouter() {
 	api.Echo.POST("/health/update-user", api.UserHandler.UpdateUser)
 	api.Echo.POST("/health/checkin", api.NotiHander.PushNoti)
 
-	api.Echo.GET("/health/get-user", api.UserHandler.GetUser)
-	api.Echo.GET("/health/get-healthinweek", api.HealthdayHandler.HandleGetInfoHealthInWeek)
-	api.Echo.GET("/health/get-healthinday", api.HealthdayHandler.HandleGetInforHealthInDay)
+	api.Echo.POST("/health/get-user", api.UserHandler.GetUser)
+	api.Echo.POST("/health/get-healthinweek", api.HealthdayHandler.HandleGetInfoHealthInWeek)
+	api.Echo.POST("/health/get-healthinday", api.HealthdayHandler.HandleGetInforHealthInDay)
 
 }
