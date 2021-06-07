@@ -35,6 +35,7 @@ func (u *HealthdayHandler) HandleSaveHealthDay(c echo.Context) error {
 		ActiveEnergyBurned: req.ActiveEnergyBurned,
 		BasalEnergyBurned: req.BasalEnergyBurned,
 		BloodOxygen: req.BloodOxygen,
+		DistanceWalkingRunning: req.DistanceWalkingRunning,
 	}
 	print(req.Userid)
 	_, err := u.HealthdayRepo.SaveHealthDay(c.Request().Context(), healthday)
@@ -108,3 +109,34 @@ func (u *HealthdayHandler) HandleGetInforHealthInDay(c echo.Context) error {
 		Data:       health,
 	})
 }
+
+func (u *HealthdayHandler) HandleUpdateWater(c echo.Context) error {
+	req := req.ReqWater{}
+	if err := c.Bind(&req); err != nil {
+		log.Error(err.Error())
+		return c.JSON(http.StatusBadRequest, model.Response{
+			StatusCode: http.StatusBadRequest,
+			Message:    err.Error(),
+			Data:       nil,
+		})
+	}
+	water := model.HealthDay{
+		Userid: req.Userid,
+		Water: req.Water,
+	}
+	result, err := u.HealthdayRepo.UpdateWater(c.Request().Context(), water)
+	if err != nil {
+		return c.JSON(http.StatusUnprocessableEntity, model.Response{
+			StatusCode: http.StatusUnprocessableEntity,
+			Message:    err.Error(),
+		})
+	}
+
+	return c.JSON(http.StatusCreated, model.Response{
+		StatusCode: http.StatusCreated,
+		Message:    "Xử lý thành công",
+		Data:       result,
+	})
+}
+
+

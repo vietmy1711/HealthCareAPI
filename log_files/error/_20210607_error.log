@@ -1,0 +1,3 @@
+time="2021-06-07T08:46:01.274578+07:00" level=error msg="pq: INSERT has more expressions than target columns" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=28
+time="2021-06-07T08:47:20.645937+07:00" level=error msg="pq: INSERT has more expressions than target columns" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=28
+time="2021-06-07T08:52:51.819499+07:00" level=error msg="pq: column \"distancewalkingrunning\" does not exist" file=/Users/edwardlauv/Desktop/HealthCareAPI/repository/repo_impl/healthday_impl.go line=60

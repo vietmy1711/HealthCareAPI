@@ -23,5 +23,6 @@ type HealthDay struct {
 	ActiveEnergyBurned float64 `json:"active_energy_burned" db:"active_energy_burned"`
 	BasalEnergyBurned float64 `json:"basal_energy_burned" db:"basal_energy_burned"`
 	BloodOxygen float64 `json:"blood_oxygen" db:"blood_oxygen"`
+	DistanceWalkingRunning float64 `json:"distance_walking_running" db:"distance_walking_running"`
 }
 
