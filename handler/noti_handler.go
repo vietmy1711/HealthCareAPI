@@ -2,6 +2,7 @@ package handler
 
 import (
 	"fmt"
+	"github.com/heroku/go-getting-started/banana"
 	"github.com/heroku/go-getting-started/log"
 	"github.com/heroku/go-getting-started/model"
 	"github.com/heroku/go-getting-started/model/req"
@@ -25,8 +26,12 @@ func (u *NotiHandler) PushNoti(c echo.Context) error {
 		})
 	}
 	fmt.Println("token")
-	fmt.Printf(req.Token)
 	_, err := u.NotiRepo.Checkin( c.Request().Context() ,req.Token)
 
+	if err != nil {
+		fmt.Printf("error");
+		return banana.NotiFail
+	}
+	fmt.Printf("success");
 	return err
 }

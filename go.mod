@@ -5,6 +5,7 @@ go 1.12
 require (
 	github.com/NaySoftware/go-fcm v0.0.0-20190516140123-808e978ddcd2 // indirect
 	github.com/appleboy/go-fcm v0.1.5
+	github.com/douglasmakey/go-fcm v0.0.0-20190519231340-ddb9be53f822 // indirect
 	github.com/fastly/go-utils v0.0.0-20180712184237-d95a45783239 // indirect
 	github.com/jehiah/go-strftime v0.0.0-20171201141054-1d33003b3869 // indirect
 	github.com/jmoiron/sqlx v1.3.1

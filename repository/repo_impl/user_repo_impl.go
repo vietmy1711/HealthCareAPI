@@ -84,4 +84,36 @@ func (u UserRepoImpl) Update(context context.Context, userid model.User) (model.
 	return user, nil
 }
 
+func (u UserRepoImpl) UpdateUser(context context.Context, userid model.User) (model.User, error) {
+	var user model.User
+	err := u.sql.DB.GetContext(context, &user, "SELECT * FROM account WHERE userid = $1", userid.UserId)
+	if err != nil {
+		log.Error(err.Error())
+		if err == sql.ErrNoRows {
+			return user, err
+		}
+		return user, err
+	}
+	sqlStatement := `
+		UPDATE account SET username = :username, age= :age  WHERE userid = :userid
+	`
+
+	result, err := u.sql.DB.NamedExecContext(context, sqlStatement, userid)
+
+	if err != nil {
+		log.Error(err.Error())
+		return user, err
+	}
+
+	count, err := result.RowsAffected()
+	if err != nil {
+		log.Error(err.Error())
+		return user, banana.UserNotUpdated
+	}
+	if count == 0 {
+		return user, banana.UserNotUpdated
+	}
+	return user, nil
+}
+
 
