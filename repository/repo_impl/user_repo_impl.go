@@ -95,7 +95,7 @@ func (u UserRepoImpl) UpdateUser(context context.Context, userid model.User) (mo
 		return user, err
 	}
 	sqlStatement := `
-		UPDATE account SET username = :username, age= :age  WHERE userid = :userid
+		UPDATE account SET username = :username, age= :age, gender= :gender  WHERE userid = :userid
 	`
 
 	result, err := u.sql.DB.NamedExecContext(context, sqlStatement, userid)

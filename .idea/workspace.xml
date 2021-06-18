@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fad060b2-d5a0-4527-9bc3-52c1bcdc444f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/banana/err_noti.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/WarningOption.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/req/req_updateinfo.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/warning.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/healthday_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/healthday_handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/noti_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/noti_handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/user_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler/user_handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/req/req_healthday.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/req/req_healthday.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/healthday_repo.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/healthday_repo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/repo_impl/healthday_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/repo_impl/healthday_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/repo_impl/noti_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/repo_impl/noti_impl.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repository/repo_impl/user_repo_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/repo_impl/user_repo_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/user_repo.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/user_repo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/api.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
