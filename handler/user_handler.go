@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"fmt"
 	"github.com/heroku/go-getting-started/banana"
 	"github.com/heroku/go-getting-started/log"
 	"github.com/heroku/go-getting-started/model"
@@ -24,6 +25,7 @@ func (u *UserHandler) HandleSignUp(c echo.Context) error {
 			Data:       nil,
 		})
 	}
+
 	user := model.User{
 		UserId: req.Userid,
 		FullName: req.FullName,
@@ -60,6 +62,8 @@ func (u *UserHandler) GetUser(c echo.Context) error {
 		})
 	}
 	user, err := u.UserRepo.GetUser(c.Request().Context(), req.Userid)
+	fmt.Printf("gender:")
+	fmt.Printf(string(user.Gender))
 	if err != nil {
 		return c.JSON(http.StatusNotFound, model.Response{
 			StatusCode: http.StatusNotFound,
